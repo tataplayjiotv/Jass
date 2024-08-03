@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@tataplayjiotv</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    :root {
+      --primary-color: #6C63FF;
+      --secondary-color: #FF6584;
+      --bg-color: #0F0F1A;
+      --text-color: #E0E0E0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 90%;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid var(--primary-color);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(108, 99, 255, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(108, 99, 255, 0);
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .date {
+      font-size: 1rem;
+      color: var(--secondary-color);
+    }
+
+    main {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .link-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    #link {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text-color);
+      padding: 15px;
+      font-size: 1rem;
+      outline: none;
+      text-align: center;
+      word-break: break-all;
+    }
+
+    #copy-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+    #copy-btn:hover {
+      background: var(--secondary-color);
+    }
+
+    .telegram-link, .player-link {
+      margin: 20px 0;
+      font-size: 1rem;
+    }
+
+    .telegram-link a, .player-link a {
+      color: var(--primary-color);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .telegram-link a:hover, .player-link a:hover {
+      color: var(--secondary-color);
+    }
+
+    .telegram-link a::after, .player-link a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--secondary-color);
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .telegram-link a:hover::after, .player-link a:hover::after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    @media (min-width: 768px) {
+      .link-container {
+        flex-direction: row;
+        align-items: center;
+        padding: 5px;
+      }
+
+      #link {
+        text-align: left;
+        padding: 15px 20px;
+      }
+
+      #copy-btn {
+        margin-top: 0;
+        padding: 15px 30px;
+        border-radius: 50px;
+        flex-shrink: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="https://i.imghippo.com/files/Gd1Hn1719046714.jpg" alt="Logo" class="logo">
+      <h1>@tataplayjiotv</h1>
+      <p class="date">Latest M3U Playlist</p>
+    </header>
+    <main>
+      <h2>Here is your M3U playlist, copy this and paste it only on iptv player.</h2>
+      <div class="link-container">
+        <input type="text" id="link" value="" readonly>
+        <button id="copy-btn">Copy Link</button>
+      </div>
+      <p class="telegram-link">Join our telegram channel for regular playlists: <a href="https://t.me/tataplayjiotv" target="_blank">t.me/tataplayjiotv</a></p>
+      <p class="player-link">Recommended IPTV Player: <a href="https://devuploads.com/6pp2evuc6twg" target="_blank">OTT NAVIGATER</a></p>
+    </main>
+  </div>
+
+  <script>
+    const linkInput = document.getElementById('link');
+    const copyBtn = document.getElementById('copy-btn');
+
+    let m3uLink = window.location.search.replace('?', '');
+    linkInput.value = m3uLink;
+
+    copyBtn.addEventListener('click', () => {
+      linkInput.select();
+      document.execCommand('copy');
+      copyBtn.innerHTML = 'Copied!';
+      setTimeout(() => {
+        copyBtn.innerHTML = 'Copy Link';
+      }, 2000);
+    });
+  </script>
+</body>
+
+</html>
