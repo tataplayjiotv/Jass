@@ -43,7 +43,7 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
 }
 
 $data = json_decode(fetchContent("https://fox.toxic-gang.xyz/tata/key/$id"), true);
-$initialUrl = $data[0]['data']['initialUrl'];
+$initialUrl = $data[0]['data']['https://bpweb4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/toxicify.mpd'];
 $psshSet = $data[0]['data']['psshSet'];
 $kid = $data[0]['data']['kid'];
 $bssh = preg_replace('/bpweb(\d+)\.akamaized\.net/', 'bpprod$1catchup.akamaized.net', $initialUrl);
