@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delay Example</title>
+    <title>Delayed Link Redirect</title>
 </head>
 <body>
-    <h1 id="delayed-text">This text will change after 3 seconds</h1>
+    <button id="delayed-link">Go to Example</button>
 
     <script>
-        setTimeout(() => {
-            document.getElementById('https://tataplayjiotv.github.io/Jass/').innerText = 'Text has been updated!';
-        }, 5000); // 5000 milliseconds = 5 seconds
+        document.getElementById('delayed-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action
+
+            setTimeout(() => {
+                window.location.href = 'https://tataplayjiotv.github.io/Jass/'; // URL to redirect to
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
     </script>
 </body>
 </html>
