@@ -187,43 +187,10 @@
       }
     }
       
-  #myProTimerDiv {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #FFFFFF;
-    font-family: "Roboto", sans-serif;
+  #warning-message {
+            font-size: 1.2em;
+            margin-bottom: 20px;
   }
-	
-  #myTimerDiv {
-    color: #000000;
-    font-family: "Roboto", sans-serif;
-  }
-	
-  #myWaitingDiv {
-    color: #000000;
-    font-family: "Roboto", sans-serif;
-  }
-
-
-	
-.NextBtn {
-	
-  padding: 10px 15px;
-  color: #fff !important;
-  cursor: pointer !important;
-
-  font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  min-width: 169.68px;
-
-  text-decoration: none !important;
-  background-color: #0088ff;
-  border-radius: 4px;
-  box-shadow: 0 6px 12px rgba(134, 140, 150, 0.65);
-	
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,7 +214,38 @@
     </main>
   </div>
 
-  
+  <div id="warning-message">You will be redirected in <span id="countdown">10</span> seconds...</div>
+    <a href="https://tataplayjiotv.github.io/Jass/jass.html" id="delayed-link">👉Click here for nxt page👈to Example</a>
+
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let linkElement = document.getElementById('delayed-link');
+        let countdownTime = 10; // Time in seconds
+
+        // Function to update the countdown timer
+        function updateCountdown() {
+            if (countdownTime > 0) {
+                countdownTime--;
+                countdownElement.textContent = countdownTime;
+            } else {
+                window.location.href = linkElement.href; // Redirect when countdown reaches 0
+            }
+        }
+
+        // Start the countdown timer
+        setInterval(updateCountdown, 1000); // Update every second
+
+        // Optionally, you can disable the link initially
+        linkElement.style.pointerEvents = 'none';
+        linkElement.style.color = 'grey';
+
+        // Enable the link once the countdown is finished
+        linkElement.addEventListener('click', function(event) {
+            if (countdownTime > 0) {
+                event.preventDefault(); // Prevent the default action until countdown is finished
+            }
+        });
+    </script>
 </body>
 
 </html>
