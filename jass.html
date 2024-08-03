@@ -220,6 +220,60 @@
     let m3uLink = window.location.search.replace('?', '');
     linkInput.value = m3uLink;
 
+To add a delay feature with a countdown timer before the link becomes available in your existing HTML source code, follow these steps:
+
+Add a Countdown Section in HTML:
+
+Insert a countdown timer that will display the time remaining before the link is available.
+
+html
+Copy code
+<div class="delay-container">
+  <p>Link will be available in:</p>
+  <span id="countdown">10:00</span> <!-- Example countdown -->
+</div>
+Style the Countdown Section with CSS:
+
+Add styles to format the countdown timer and ensure it fits well with your existing design.
+
+css
+Copy code
+.delay-container {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+#countdown {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+Modify the JavaScript for Countdown and Link Activation:
+
+Update your JavaScript to handle the countdown logic and to enable the link once the countdown is complete.
+
+html
+Copy code
+<script>
+  const linkInput = document.getElementById('link');
+  const copyBtn = document.getElementById('copy-btn');
+  const countdownElem = document.getElementById('countdown');
+
+  let m3uLink = window.location.search.replace('?', '');
+  linkInput.value = 'Link will be available shortly...';
+
+  // Set the countdown time in seconds (e.g., 10 minutes)
+  let countdownTime = 10 * 60; 
+
+  function updateCountdown() {
+    const minutes = Math.floor(countdownTime / 60);
+    const seconds = countdownTime % 60;
+    countdownElem.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    countdownTime--;
+
+    if (countdownTime < 0) {
+      clearInterval(countdownInterval);
     copyBtn.addEventListener('click', () => {
       linkInput.select();
       document.execCommand('copy');
