@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delayed Link Redirect</title>
+    <title>Delayed Link with Warning</title>
+    <style>
+        #warning-message {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <button id="delayed-link">Go to Example</button>
+    <div id="warning-message">You will be redirected in <span id="countdown">5</span> seconds...</div>
+    <a href="https://www.example.com" id="delayed-link">Click here to go to Example</a>
 
     <script>
-        document.getElementById('delayed-link').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default action
+        let countdownElement = document.getElementById('countdown');
+        let linkElement = document.getElementById('delayed-link');
+        let countdownTime = 5; // Time in seconds
 
-            setTimeout(() => {
-                window.location.href = 'https://tataplayjiotv.github.io/Jass/'; // URL to redirect to
-            }, 3000); // 3000 milliseconds = 3 seconds
+        // Function to update the countdown timer
+        function updateCountdown() {
+            if (countdownTime > 0) {
+                countdownTime--;
+                countdownElement.textContent = countdownTime;
+            } else {
+                window.location.href = linkElement.href; // Redirect when countdown reaches 0
+            }
+        }
+
+        // Start the countdown timer
+        setInterval(updateCountdown, 1000); // Update every second
+
+        // Optionally, you can disable the link initially
+        linkElement.style.pointerEvents = 'none';
+        linkElement.style.color = 'grey';
+
+        // Enable the link once the countdown is finished
+        linkElement.addEventListener('click', function(event) {
+            if (countdownTime > 0) {
+                event.preventDefault(); // Prevent the default action until countdown is finished
+            }
         });
     </script>
 </body>
