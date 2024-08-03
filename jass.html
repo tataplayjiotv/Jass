@@ -181,6 +181,18 @@
         flex-shrink: 0;
       }
     }
+    .delay-container {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+#countdown {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
 
     @media (max-width: 768px) {
       .container {
@@ -262,6 +274,10 @@ Copy code
 
   let m3uLink = window.location.search.replace('?', '');
   linkInput.value = 'Link will be available shortly...';
+<div class="delay-container">
+  <p>Link will be available in:</p>
+  <span id="countdown">10:00</span> <!-- Example countdown -->
+</div>
 
   // Set the countdown time in seconds (e.g., 10 minutes)
   let countdownTime = 10 * 60; 
