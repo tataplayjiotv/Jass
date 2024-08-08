@@ -1,17 +1,25 @@
-<?xml version="1.0" ?>
-<MPD mediaPresentationDuration="PT38.466S" minBufferTime="PT1.00S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011">
-  <Period>
-    <!-- Video -->
-    <AdaptationSet maxHeight="1080" maxWidth="1920" mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
-      <SegmentTemplate duration="1000" initialization="$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
-      <Representation bandwidth="9103599" codecs="avc1.640004" frameRate="577000/19233" height="1080" id="video/avc1" scanType="progressive" width="1920"/>
-    </AdaptationSet>
-    <!-- Audio -->
-    <AdaptationSet lang="en" mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
-      <SegmentTemplate duration="1000" initialization="$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
-      <Representation audioSamplingRate="44100" bandwidth="139221" codecs="mp4a.40.2" id="audio/en/mp4a.40.2">
-        <AudioChannelConfiguration schemeIdUri="urn:mpeg:mpegB:cicp:ChannelConfiguration" value="2"/>
-      </Representation>
-    </AdaptationSet>
-  </Period>
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.mpegif.org/MPEG-DASH.xsd" minBufferTime="PT1.500S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" mediaPresentationDuration="PT0H30M0.00S" maxSegmentDuration="PT10S">
+    <Period id="1" start="PT0S">
+        <AdaptationSet mimeType="video/mp4" codecs="avc1.42E01E" width="1280" height="720" segmentAlignment="true">
+            <Representation id="video1" bandwidth="2000000" width="1280" height="720" codecs="avc1.42E01E" frameRate="25">
+                <BaseURL>http://example.com/video/</BaseURL>
+                <SegmentList duration="10000" startNumber="1" timescale="1000">
+                    <SegmentURL media="segment-1.m4s"/>
+                    <SegmentURL media="segment-2.m4s"/>
+                    <!-- Add more segments here -->
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+        <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" segmentAlignment="true">
+            <Representation id="audio1" bandwidth="128000" codecs="mp4a.40.2" audioSamplingRate="48000">
+                <BaseURL>http://example.com/audio/</BaseURL>
+                <SegmentList duration="10000" startNumber="1" timescale="1000">
+                    <SegmentURL media="segment-1.m4s"/>
+                    <SegmentURL media="segment-2.m4s"/>
+                    <!-- Add more segments here -->
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+    </Period>
 </MPD>
