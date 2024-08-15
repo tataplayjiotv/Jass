@@ -10,7 +10,7 @@
     <Period id="1" duration="PT1H0M0S">
         <AdaptationSet mimeType="video/mp4" codecs="avc1.4d401e" startWithSAP="1" segmentAlignment="true">
             <Representation id="1" bandwidth="1000000" width="1280" height="720">
-                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/manifest.mpd</BaseURL>
                 <SegmentList duration="10" initialization="init.mp4">
                     <SegmentURL media="segment_1.mp4"/>
                     <SegmentURL media="segment_2.mp4"/>
@@ -20,7 +20,7 @@
         </AdaptationSet>
         <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" segmentAlignment="true">
             <Representation id="2" bandwidth="128000">
-                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/manifest.mpd</BaseURL>
                 <SegmentList duration="10" initialization="init.mp4">
                     <SegmentURL media="audio_segment_1.mp4"/>
                     <SegmentURL media="audio_segment_2.mp4"/>
