@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MPD xmlns="urn:mpeg:dash:schema:mpd:2011"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.iso.org/iso/iso_iec_23009-1_2014.xsd"
-     profile="urn:mpeg:dash:profile:isoff-on-demand:2011"
-     type="static"
-     mediaPresentationDuration="PT1H"
-     minBufferTime="PT1S">
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.3gpp.org/ftp/specs/archive/26_series/26.234/26234-103c3.xml"
+     minBufferTime="PT1.5S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" mediaPresentationDuration="PT2H0M0S">
 
-    <Period id="1" duration="PT1H">
-        <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
-            <ContentComponent id="1" contentType="video"/>
-            <Representation id="video1" bandwidth="1500000" codecs="avc1.4d401e" width="1280" height="720">
-                <BaseURL>https://fox.toxic-gang.xyz/tata/video/</BaseURL>
-                <SegmentList timescale="1000" duration="2000">
-                    <SegmentURL media="segment1.m4s"/>
-                    <SegmentURL media="segment2.m4s"/>
-                    <!-- Add more segments as needed -->
-                </SegmentList>
+    <!-- Period -->
+    <Period id="1" duration="PT2H0M0S">
+
+        <!-- Adaptation Set for Video -->
+        <AdaptationSet id="1" contentType="video" mimeType="video/mp4" codecs="avc1.4d401f" segmentAlignment="true" startWithSAP="1">
+            <Representation id="video-480p" bandwidth="800000" width="854" height="480" frameRate="25">
+                <BaseURL>https://example.com/video/480p/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
+            </Representation>
+            <Representation id="video-720p" bandwidth="2000000" width="1280" height="720" frameRate="25">
+                <BaseURL>https://example.com/video/720p/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
+            </Representation>
+            <Representation id="video-1080p" bandwidth="5000000" width="1920" height="1080" frameRate="25">
+                <BaseURL>https://example.com/video/1080p/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
             </Representation>
         </AdaptationSet>
 
-        <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
-            <ContentComponent id="2" contentType="audio"/>
-            <Representation id="audio1" bandwidth="128000" codecs="mp4a.40.2" audioSamplingRate="48000">
-                <BaseURL>https://fox.toxic-gang.xyz/tata/audio/</BaseURL>
-                <SegmentList timescale="1000" duration="2000">
-                    <SegmentURL media="segment1.m4s"/>
-                    <SegmentURL media="segment2.m4s"/>
-                    <!-- Add more segments as needed -->
-                </SegmentList>
+        <!-- Adaptation Set for Audio -->
+        <AdaptationSet id="2" contentType="audio" mimeType="audio/mp4" codecs="mp4a.40.2" segmentAlignment="true" startWithSAP="1">
+            <Representation id="audio-english" bandwidth="64000" language="en">
+                <BaseURL>https://example.com/audio/english/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
+            </Representation>
+            <Representation id="audio-spanish" bandwidth="64000" language="es">
+                <BaseURL>https://example.com/audio/spanish/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
             </Representation>
         </AdaptationSet>
 
-        <!-- Add more AdaptationSets if needed -->
+        <!-- Adaptation Set for Text (optional, if subtitles are available) -->
+        <!-- <AdaptationSet id="3" contentType="text" mimeType="application/ttml+xml">
+            <Representation id="subtitles-en">
+                <BaseURL>https://example.com/subtitles/english/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="2000" initialization="init.ttml" media="segment-$Number$.ttml"/>
+            </Representation>
+        </AdaptationSet> -->
+
     </Period>
-
 </MPD>
