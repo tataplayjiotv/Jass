@@ -1,67 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MPD xmlns="urn:mpeg:dash:schema:mpd:2011" 
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 
-                         http://www.mpegla.com/Specifications/MPEG-DASH/MPD.xsd"
-     profile="urn:mpeg:dash:profile:isoff-on-demand:2011"
-     type="static"
-     mediaPresentationDuration="PT1H0M0S"
-     minBufferTime="PT1.5S">
-
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.ebu.ch/metadata/ontologies/ebucore/ebucore.xsd" 
+     xmlns:dash="urn:mpeg:dash:schema:mpd:2011" 
+     profiles="urn:mpeg:dash:profile:live:2016" 
+     type="static" 
+     mediaPresentationDuration="PT1H0M0S" 
+     maxSegmentDuration="PT10S">
     <Period id="1" duration="PT1H0M0S">
-        <AdaptationSet mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
-            <ContentProtection
-                schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
-                value="cenc">
-                <cenc:pssh
-                    xmlns:cenc="urn:mpeg:cenc:2013"
-                    xmlns:pssh="urn:mpeg:pssh:2011">
-                    AAAAAHAB1zEA7e+LqXnWSs6jyCfc1R0h7QAAABgSELLCIMJRH1r+nAICaaMKipY40Kz3tQY=
-                </cenc:pssh>
-                <cenc:defaultKID
-                    xmlns:cenc="urn:mpeg:cenc:2013"
-                    xmlns:pssh="urn:mpeg:pssh:2011">
-                    b2c220c2-511f-5afe-9c02-0269a30a8a96
-                </cenc:defaultKID>
-            </ContentProtection>
-
-            <Representation id="1" bandwidth="500000" width="640" height="360" codecs="avc1.4d401f">
+        <AdaptationSet mimeType="video/mp4" codecs="avc1.4d401e" startWithSAP="1" segmentAlignment="true">
+            <Representation id="1" bandwidth="1000000" width="1280" height="720">
                 <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="5000" initialization="init.mp4" media="segment_$Number$.m4s"/>
-                <SegmentList>
-                    <SegmentURL media="segment1.m4s" />
-                    <SegmentURL media="segment2.m4s" />
+                <SegmentList duration="10" initialization="init.mp4">
+                    <SegmentURL media="segment_1.mp4"/>
+                    <SegmentURL media="segment_2.mp4"/>
                     <!-- Add more segments as needed -->
                 </SegmentList>
             </Representation>
         </AdaptationSet>
-
-        <AdaptationSet mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
-            <ContentProtection
-                schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
-                value="cenc">
-                <cenc:pssh
-                    xmlns:cenc="urn:mpeg:cenc:2013"
-                    xmlns:pssh="urn:mpeg:pssh:2011">
-                    AAAAAHAB1zEA7e+LqXnWSs6jyCfc1R0h7QAAABgSELLCIMJRH1r+nAICaaMKipY40Kz3tQY=
-                </cenc:pssh>
-                <cenc:defaultKID
-                    xmlns:cenc="urn:mpeg:cenc:2013"
-                    xmlns:pssh="urn:mpeg:pssh:2011">
-                    b2c220c2-511f-5afe-9c02-0269a30a8a96
-                </cenc:defaultKID>
-            </ContentProtection>
-
-            <Representation id="2" bandwidth="64000" codecs="mp4a.40.2" audioSamplingRate="48000">
+        <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" segmentAlignment="true">
+            <Representation id="2" bandwidth="128000">
                 <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="5000" initialization="init.mp4" media="segment_$Number$.m4s"/>
-                <SegmentList>
-                    <SegmentURL media="segment1.m4s" />
-                    <SegmentURL media="segment2.m4s" />
+                <SegmentList duration="10" initialization="init.mp4">
+                    <SegmentURL media="audio_segment_1.mp4"/>
+                    <SegmentURL media="audio_segment_2.mp4"/>
                     <!-- Add more segments as needed -->
                 </SegmentList>
             </Representation>
         </AdaptationSet>
     </Period>
-
 </MPD>
