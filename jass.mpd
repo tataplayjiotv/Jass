@@ -1,46 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.3gpp.org/ftp/specs/archive/26_series/26.234/26234-103c3.xml"
-     minBufferTime="PT1.5S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" mediaPresentationDuration="PT2H0M0S">
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 
+                         http://www.mpegla.com/Specifications/MPEG-DASH/MPD.xsd"
+     profile="urn:mpeg:dash:profile:isoff-on-demand:2011"
+     type="static"
+     mediaPresentationDuration="PT1H0M0S"
+     minBufferTime="PT1.5S">
 
-    <!-- Period -->
-    <Period id="1" duration="PT2H0M0S">
+    <Period id="1" duration="PT1H0M0S">
+        <AdaptationSet mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
+            <ContentProtection
+                schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
+                value="cenc">
+                <cenc:pssh
+                    xmlns:cenc="urn:mpeg:cenc:2013"
+                    xmlns:pssh="urn:mpeg:pssh:2011">
+                    AAAAAHAB1zEA7e+LqXnWSs6jyCfc1R0h7QAAABgSELLCIMJRH1r+nAICaaMKipY40Kz3tQY=
+                </cenc:pssh>
+                <cenc:defaultKID
+                    xmlns:cenc="urn:mpeg:cenc:2013"
+                    xmlns:pssh="urn:mpeg:pssh:2011">
+                    b2c220c2-511f-5afe-9c02-0269a30a8a96
+                </cenc:defaultKID>
+            </ContentProtection>
 
-        <!-- Adaptation Set for Video -->
-        <AdaptationSet id="1" contentType="video" mimeType="video/mp4" codecs="avc1.4d401f" segmentAlignment="true" startWithSAP="1">
-            <Representation id="video-480p" bandwidth="800000" width="854" height="480" frameRate="25">
-                <BaseURL>https://example.com/video/480p/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
-            </Representation>
-            <Representation id="video-720p" bandwidth="2000000" width="1280" height="720" frameRate="25">
-                <BaseURL>https://example.com/video/720p/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
-            </Representation>
-            <Representation id="video-1080p" bandwidth="5000000" width="1920" height="1080" frameRate="25">
-                <BaseURL>https://example.com/video/1080p/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
+            <Representation id="1" bandwidth="500000" width="640" height="360" codecs="avc1.4d401f">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="5000" initialization="init.mp4" media="segment_$Number$.m4s"/>
+                <SegmentList>
+                    <SegmentURL media="segment1.m4s" />
+                    <SegmentURL media="segment2.m4s" />
+                    <!-- Add more segments as needed -->
+                </SegmentList>
             </Representation>
         </AdaptationSet>
 
-        <!-- Adaptation Set for Audio -->
-        <AdaptationSet id="2" contentType="audio" mimeType="audio/mp4" codecs="mp4a.40.2" segmentAlignment="true" startWithSAP="1">
-            <Representation id="audio-english" bandwidth="64000" language="en">
-                <BaseURL>https://example.com/audio/english/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
-            </Representation>
-            <Representation id="audio-spanish" bandwidth="64000" language="es">
-                <BaseURL>https://example.com/audio/spanish/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="2000" initialization="init.mp4" media="segment-$Number$.mp4"/>
+        <AdaptationSet mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+            <ContentProtection
+                schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
+                value="cenc">
+                <cenc:pssh
+                    xmlns:cenc="urn:mpeg:cenc:2013"
+                    xmlns:pssh="urn:mpeg:pssh:2011">
+                    AAAAAHAB1zEA7e+LqXnWSs6jyCfc1R0h7QAAABgSELLCIMJRH1r+nAICaaMKipY40Kz3tQY=
+                </cenc:pssh>
+                <cenc:defaultKID
+                    xmlns:cenc="urn:mpeg:cenc:2013"
+                    xmlns:pssh="urn:mpeg:pssh:2011">
+                    b2c220c2-511f-5afe-9c02-0269a30a8a96
+                </cenc:defaultKID>
+            </ContentProtection>
+
+            <Representation id="2" bandwidth="64000" codecs="mp4a.40.2" audioSamplingRate="48000">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <SegmentTemplate timescale="1000" duration="5000" initialization="init.mp4" media="segment_$Number$.m4s"/>
+                <SegmentList>
+                    <SegmentURL media="segment1.m4s" />
+                    <SegmentURL media="segment2.m4s" />
+                    <!-- Add more segments as needed -->
+                </SegmentList>
             </Representation>
         </AdaptationSet>
-
-        <!-- Adaptation Set for Text (optional, if subtitles are available) -->
-        <!-- <AdaptationSet id="3" contentType="text" mimeType="application/ttml+xml">
-            <Representation id="subtitles-en">
-                <BaseURL>https://example.com/subtitles/english/</BaseURL>
-                <SegmentTemplate timescale="1000" duration="2000" initialization="init.ttml" media="segment-$Number$.ttml"/>
-            </Representation>
-        </AdaptationSet> -->
-
     </Period>
+
 </MPD>
