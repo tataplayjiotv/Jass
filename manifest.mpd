@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Broadpeak BkS350 Origin Packager  (version=1.12.8-28913) -->
 <MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mpeg:dash:schema:mpd:2011" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" type="dynamic" availabilityStartTime="1970-01-01T00:00:00Z" publishTime="2024-08-14T15:12:03.106536Z" minimumUpdatePeriod="PT8S" timeShiftBufferDepth="PT4H10M" maxSegmentDuration="PT8S" minBufferTime="PT30S" profiles="urn:mpeg:dash:profile:isoff-live:2011,urn:com:dashif:dash264">
   <Period id="1" start="PT0S">
     <BaseURL>https://bpweb3.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
