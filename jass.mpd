@@ -4,7 +4,7 @@
     <BaseURL>https://bpwta3.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
     
     <!-- Audio Adaptation Sets -->
-    <AdaptationSet id="1" group="1" contentType="audio" lang="eng" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
+    <AdaptationSet id="1" group="1" contentType="audio" lang="hindi" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94000_eng" bandwidth="94000">
