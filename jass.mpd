@@ -1,47 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Broadpeak BkS350 Origin Packager  (version=1.12.8-28913) -->
-<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mpeg:dash:schema:mpd:2011" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" type="dynamic" availabilityStartTime="1970-01-01T00:00:00Z" publishTime="2024-08-18T07:25:35.093837Z" minimumUpdatePeriod="PT8S" timeShiftBufferDepth="PT4H10M" maxSegmentDuration="PT8S" minBufferTime="PT30S" profiles="urn:mpeg:dash:profile:isoff-live:2011">
-  <Period id="1" start="PT0S">
-    <BaseURL>https://bpprod5catchup.akamaized.net/bpk-tv/irdeto_com_Channel_876/output/dash/</BaseURL>
-    <AdaptationSet id="1" group="1" contentType="audio" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_84696_und=84400" bandwidth="84400">
-      <SegmentTemplate timescale="48000" initialization="Tata_Play_Cooking-$RepresentationID$.dash" media="Tata_Play_Cooking-$RepresentationID$-$Number$.m4s" startNumber="215493867">
-      <SegmentTimeline><S t="82749644544000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <!-- Common Encryption -->
-      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="8B1D7E4A-0307-5B89-9CA4-66AB1D8A4E8F">
-      </ContentProtection>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine">
-        <cenc:pssh>AAAAMnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABISEIsdfkoDB1uJnKRmqx2KTo8=</cenc:pssh>
-      </ContentProtection>
+<?xml version="1.0" ?>
+<MPD mediaPresentationDuration="PT38.466S" minBufferTime="PT1.00S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011">
+
+  <!-- Base URL -->
+  <BaseURL>https://bpweb3.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
+  
+
+  <Period>
+    <!-- Video -->
+    <AdaptationSet maxHeight="1080" maxWidth="1920" mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
+      <SegmentTemplate duration="1000" initialization="$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
+      <Representation bandwidth="9103599" codecs="avc1.640004" frameRate="577000/19233" height="1080" id="video/avc1" scanType="progressive" width="1920"/>
     </AdaptationSet>
-    <AdaptationSet id="2" group="2" contentType="video" par="4:3" minBandwidth="198800" maxBandwidth="1245600" maxWidth="854" maxHeight="640" segmentAlignment="true" mimeType="video/mp4" startWithSAP="1">
-      <SupplementalProperty schemeIdUri="urn:mpeg:mpegB:cicp:ColourPrimaries" value="5"/>
-      <SupplementalProperty schemeIdUri="urn:mpeg:mpegB:cicp:TransferCharacteristics" value="5"/>
-      <SupplementalProperty schemeIdUri="urn:mpeg:mpegB:cicp:MatrixCoefficients" value="5"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="video=198800" bandwidth="198800" width="320" height="176" sar="11:15" codecs="avc1.4D400C" scanType="progressive">
-      <SegmentTemplate timescale="90000" initialization="Tata_Play_Cooking-$RepresentationID$.dash" media="Tata_Play_Cooking-$RepresentationID$-$Number$.m4s" startNumber="215493867">
-      <SegmentTimeline><S t="155155583520000" d="720000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <Representation id="video=424400" bandwidth="424400" width="480" height="270" sar="3:4" codecs="avc1.4D4015" scanType="progressive">
-      <SegmentTemplate timescale="90000" initialization="Tata_Play_Cooking-$RepresentationID$.dash" media="Tata_Play_Cooking-$RepresentationID$-$Number$.m4s" startNumber="215493867">
-      <SegmentTimeline><S t="155155583520000" d="720000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <Representation id="video=834800" bandwidth="834800" width="640" height="360" sar="3:4" codecs="avc1.4D401E" scanType="progressive">
-      <SegmentTemplate timescale="90000" initialization="Tata_Play_Cooking-$RepresentationID$.dash" media="Tata_Play_Cooking-$RepresentationID$-$Number$.m4s" startNumber="215493867">
-      <SegmentTimeline><S t="155155583520000" d="720000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <Representation id="video=1245600" bandwidth="1245600" width="854" height="480" sar="320:427" codecs="avc1.4D401E" scanType="progressive">
-      <SegmentTemplate timescale="90000" initialization="Tata_Play_Cooking-$RepresentationID$.dash" media="Tata_Play_Cooking-$RepresentationID$-$Number$.m4s" startNumber="215493867">
-      <SegmentTimeline><S t="155155583520000" d="720000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <!-- Common Encryption -->
-      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="8B1D7E4A-0307-5B89-9CA4-66AB1D8A4E8F">
-      </ContentProtection>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine">
-        <cenc:pssh>AAAAMnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABISEIsdfkoDB1uJnKRmqx2KTo8=</cenc:pssh>
-      </ContentProtection>
+    <!-- Audio -->
+    <AdaptationSet lang="en" mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+      <SegmentTemplate duration="1000" initialization="$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
+      <Representation audioSamplingRate="44100" bandwidth="139221" codecs="mp4a.40.2" id="audio/en/mp4a.40.2">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:mpegB:cicp:ChannelConfiguration" value="2"/>
+      </Representation>
     </AdaptationSet>
   </Period>
-  <UTCTiming schemeIdUri="urn:mpeg:dash:utc:http-iso:2014" value="https://time.akamai.com/?iso"/>
 </MPD>
