@@ -1,258 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+#!/bin/bash
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@tataplayjiotv</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+# Define the file paths
+CONFIG_FILE="path/to/config/file"
+INCLUDE_FILE="path/to/include/file"
+URL="https://tataplayjiotv.github.io/Jass/jass.mpd"
 
-    :root {
-      --primary-color: #6C63FF;
-      --secondary-color: #FF6584;
-      --bg-color: #0F0F1A;
-      --text-color: #E0E0E0;
-    }
+# Read current startNumber from the configuration file
+startNumber=$(grep -oP '(?<=startNumber=")[0-9]+' "$CONFIG_FILE")
 
-    * {
-      box-sizing: border-box;
-      margin: 10px;
-      padding: 10px;
-    }
+# Increment the startNumber
+newNumber=$((startNumber + 1))
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-    }
+# Update the config file with the new startNumber
+sed -i "s/startNumber=\"$startNumber\"/startNumber=\"$newNumber\"/" "$CONFIG_FILE"
 
-    .container {
-      max-width: 9000px;
-      width: 90%;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
+# Download the file from the URL
+curl -o "jass.mpd" "$URL"
 
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+# Include and process additional content
+# Assuming the content of 'include_file.txt' is part of the script logic
+echo "Processing additional content from $INCLUDE_FILE:"
+while IFS= read -r line; do
+    echo "Included line: $line"
+done < "$INCLUDE_FILE"
 
-    .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 4px solid var(--primary-color);
-      animation: pulse 2s infinite;l
-    }
-    #warning-message {
-            font-size: 1.2em;
-            margin-top: 0;
-            padding: 15px 30px;
-            border-radius: 50px;
-            flex-shrink: 0;
-            margin-bottom: 20px;
-    }
-    
+echo "Updated startNumber to $newNumber"
 
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(108, 99, 255, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(108, 99, 255, 0);
-      }
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .date {
-      font-size: 1rem;
-      color: var(--secondary-color);
-    }
-
-    main {
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    .link-container {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 30px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 10px;
-      overflow: hidden;
-    }
-
-    #link {
-      width: 100%;
-      background: transparent;
-      border: none;
-      color: var(--text-color);
-      padding: 15px;
-      font-size: 1rem;
-      outline: none;
-      text-align: center;
-      word-break: break-all;
-    }
-
-    #copy-btn {
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 10px;
-      border-radius: 10px;
-    }
-
-    #copy-btn:hover {
-      background: var(--secondary-color);
-    }
-
-    .telegram-link, .player-link {
-      margin: 20px 0;
-      font-size: 1rem;
-    }
-
-    .telegram-link a, .player-link a {
-      color: var(--primary-color);
-      text-decoration: none;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .telegram-link a:hover, .player-link a:hover {
-      color: var(--secondary-color);
-    }
-
-    .telegram-link a::after, .player-link a::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: var(--secondary-color);
-      visibility: hidden;
-      transform: scaleX(0);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .telegram-link a:hover::after, .player-link a:hover::after {
-      visibility: visible;
-      transform: scaleX(1);
-    }
-
-    @media (min-width: 768px) {
-      .link-container {
-        flex-direction: row;
-        align-items: center;
-        padding: 5px;
-      }
-
-      #link {
-        text-align: left;
-        padding: 15px 20px;
-      }
-
-      
-
-    @media (max-width: 768px) {
-      .container {
-        width: 95%;
-        padding: 30px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-    }
-      
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 400;
-  text-align: center;
-  text-transform: capitalize;
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <header class="header">
-      <img src="https://i.imghippo.com/files/Gd1Hn1719046714.jpg" alt="Logo" class="logo">
-      <h1>@tataplayjiotv</h1>
-      <p class="date">Latest M3U Playlist</p>
-    </header>
-    
-      <p class="telegram-link">Join our telegram channel for regular playlists: <a href="https://t.me/tataplayjiotv" target="_blank">t.me/tataplayjiotv</a></p>
-      <p class="player-link">Recommended IPTV Player: <a href="https://devuploads.com/6pp2evuc6twg" target="_blank">OTT NAVIGATER</a></p>
-       <p class=open"> click to open next page: <a href="https://tataplayjiotv.github.io/Jass/jass.html" target="_blank">👉 click hair 👈</a></p>
-    </main>
-  </div>
-<center>
-  <div id="warning-message">You will be redirected in <span id="countdown">100</span> seconds...</div>
-    <a href="https://tataplayjiotv.github.io/Jass/jass.html" id="delayed-link">👉Click here for nxt page👈to Example</a>
-
-    <script>
-        let countdownElement = document.getElementById('countdown');
-        let linkElement = document.getElementById('delayed-link');
-        let countdownTime = 100; // Time in seconds
-
-        // Function to update the countdown timer
-        function updateCountdown() {
-            if (countdownTime > 0) {
-                countdownTime--;
-                countdownElement.textContent = countdownTime;
-            } else {
-                window.location.href = linkElement.href; // Redirect when countdown reaches 0
-            }
-        }
-
-        // Start the countdown timer
-        setInterval(updateCountdown, 1000); // Update every second
-
-        // Optionally, you can disable the link initially
-        linkElement.style.pointerEvents = 'none';
-        linkElement.style.color = 'grey';
-
-        // Enable the link once the countdown is finished
-        linkElement.addEventListener('click', function(event) {
-            if (countdownTime > 0) {
-                event.preventDefault(); // Prevent the default action until countdown is finished
-            }
-        });
-    </script>
-</center>
-</body>
-
-</html>
+# Optionally process the downloaded file
+echo "Processing content from the downloaded file jass.mpd:"
+while IFS= read -r line; do
+    echo "Downloaded line: $line"
+done < "jass.mpd"
