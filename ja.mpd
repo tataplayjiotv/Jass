@@ -1,56 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" 
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 
-                         http://dashif.org/2011/dash.xsd" 
-     profiles="urn:mpeg:dash:profile:mp4:2011" 
-     type="static" 
-     minBufferTime="PT1.5S" 
-     mediaPresentationDuration="PT1H30M" 
-     maxSegmentDuration="PT2S">
+<?xml version="1.0" ?>
+<MPD mediaPresentationDuration="PT38.466S" minBufferTime="PT1.00S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011">
 
-    <!-- Period -->
-    <Period id="1" start="PT0S">
-        
-        <!-- AdaptationSet for Video -->
-        <AdaptationSet mimeType="video/mp4" codecs="avc1.4d401f" width="1280" height="720" segmentAlignment="true">
-            <Representation id="video-720p" bandwidth="2000000" codecs="avc1.4d401f" width="1280" height="720" frameRate="25">
-                <BaseURL>https://example.com/video/720p/</BaseURL>
-                <SegmentList duration="2000000" startNumber="1" timescale="1000000">
-                    <SegmentURL media="segment1.m4s"/>
-                    <SegmentURL media="segment2.m4s"/>
-                    <!-- More segments here -->
-                </SegmentList>
-            </Representation>
-            <Representation id="video-480p" bandwidth="1000000" codecs="avc1.4d401e" width="854" height="480" frameRate="25">
-                <BaseURL>https://example.com/video/480p/</BaseURL>
-                <SegmentList duration="2000000" startNumber="1" timescale="1000000">
-                    <SegmentURL media="segment1.m4s"/>
-                    <SegmentURL media="segment2.m4s"/>
-                    <!-- More segments here -->
-                </SegmentList>
-            </Representation>
-        </AdaptationSet>
+  <!-- Base URL -->
+  <BaseURL>https://bpweb7.akamaized.net/bpk-tv/irdeto_com_Channel_781/output/dash/</BaseURL>
+  
 
-        <!-- AdaptationSet for Audio -->
-        <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" lang="en" segmentAlignment="true">
-            <Representation id="audio-en" bandwidth="128000" codecs="mp4a.40.2">
-                <BaseURL>https://example.com/audio/en/</BaseURL>
-                <SegmentList duration="2000000" startNumber="1" timescale="1000000">
-                    <SegmentURL media="segment1.m4s"/>
-                    <SegmentURL media="segment2.m4s"/>
-                    <!-- More segments here -->
-                </SegmentList>
-            </Representation>
-            <Representation id="audio-es" bandwidth="128000" codecs="mp4a.40.2" lang="es">
-                <BaseURL>https://example.com/audio/es/</BaseURL>
-                <SegmentList duration="2000000" startNumber="1" timescale="1000000">
-                    <SegmentURL media="segment1.m4s"/>
-                    <SegmentURL media="segment2.m4s"/>
-                    <!-- More segments here -->
-                </SegmentList>
-            </Representation>
-        </AdaptationSet>
-        
-    </Period>
+  <Period>
+    <!-- Video -->
+    <AdaptationSet maxHeight="1080" maxWidth="1920" mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
+      <SegmentTemplate duration="1000" initialization="Super_Hungama-$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
+      <Representation bandwidth="9103599" codecs="avc1.640004" frameRate="577000/19233" height="1080" id="video/avc1" scanType="progressive" width="1920"/>
+    </AdaptationSet>
+    <!-- Audio -->
+    <AdaptationSet lang="en" mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+      <SegmentTemplate duration="1000" initialization="Super_Hungama-$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
+      <Representation audioSamplingRate="44100" bandwidth="139221" codecs="mp4a.40.2" id="audio/en/mp4a.40.2">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:mpegB:cicp:ChannelConfiguration" value="2"/>
+      </Representation>
+    </AdaptationSet>
+  </Period>
 </MPD>
