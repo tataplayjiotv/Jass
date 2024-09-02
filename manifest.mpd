@@ -1,65 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
-<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mpeg:dash:schema:mpd:2011" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" type="dynamic" availabilityStartTime="1970-01-01T00:00:00Z" publishTime="2024-08-14T15:12:03.106536Z" minimumUpdatePeriod="PT8S" timeShiftBufferDepth="PT4H10M" maxSegmentDuration="PT8S" minBufferTime="PT30S" profiles="urn:mpeg:dash:profile:isoff-live:2011,urn:com:dashif:dash264">
-  <Period id="1" start="PT0S">
-    <BaseURL>https://bpweb3.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
-    <AdaptationSet id="1" group="1" contentType="audio" lang="eng" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_94482_eng=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="82734398976000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"><cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSENeF4SVGbV3Mvx2pjX8xRHA47IXztQY=</cenc:pssh></ContentProtection>
-    </AdaptationSet>
-    <AdaptationSet id="2" group="1" contentType="audio" lang="tam" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_94486_tam=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="82734398976000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"><cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSENeF4SVGbV3Mvx2pjX8xRHA47IXztQY=</cenc:pssh></ContentProtection>
-    </AdaptationSet>
-    <AdaptationSet id="3" group="1" contentType="audio" lang="tel" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_94490_tel=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="82734398976000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"><cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSENeF4SVGbV3Mvx2pjX8xRHA47IXztQY=</cenc:pssh></ContentProtection>
-    </AdaptationSet>
-    <AdaptationSet id="4" group="1" contentType="audio" lang="hin" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_94494_hin=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="82734398976000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"><cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSENeF4SVGbV3Mvx2pjX8xRHA47IXztQY=</cenc:pssh></ContentProtection>
-    </AdaptationSet>
-    <AdaptationSet id="5" group="2" contentType="video" par="4:3" minBandwidth="226400" maxBandwidth="1297600" maxWidth="854" maxHeight="640" segmentAlignment="true" sar="3:4" frameRate="25" mimeType="video/mp4" codecs="avc1.4D401E" startWithSAP="1">
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="video=226400" bandwidth="226400" width="320" height="180" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="1034179987200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <Representation id="video=457600" bandwidth="457600" width="480" height="270" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="1034179987200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <Representation id="video=877600" bandwidth="877600" width="640" height="360" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="1034179987200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <Representation id="video=1297600" bandwidth="1297600" width="854" height="480" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" media="Disney_Channel-$RepresentationID$-$Number$.m4s?hdnea=exp=1723648806~acl=/*~hmac=dcb612a56b50080d1c584587751ce766e43cb25f89eec4988a4d2cbb4eee906c?hdnea=exp=1723648437~acl=/*~hmac=885673bb79db8558f005bee5b08794588786db71e3bc315aa9d23138e6f55e1c&amp;decryption_key=85d559e430e9cd9282135956dc05cc22" startNumber="215454165">
-      <SegmentTimeline><S t="1034179987200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
-      <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"><cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSENeF4SVGbV3Mvx2pjX8xRHA47IXztQY=</cenc:pssh></ContentProtection>
-    </AdaptationSet>
-  </Period>
-  <UTCTiming schemeIdUri="urn:mpeg:dash:utc:http-iso:2014" value="https://time.akamai.com/?iso"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.dashif.org/2011/mpd.xsd"
+     profiles="urn:mpeg:dash:profile:isoff-on-demand:2011"
+     type="static"
+     mediaPresentationDuration="PT1H30M" 
+     minBufferTime="PT1.5S"
+     maxSegmentDuration="PT2M">
+    
+    <Period id="1" duration="PT1H30M">
+        <AdaptationSet mimeType="video/mp4" codecs="avc1.42E01E">
+            <Representation id="1" bandwidth="500000" width="640" height="360" frameRate="30">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/babel.mpd</BaseURL>
+                <SegmentList duration="2000000" timescale="1000000">
+                    <SegmentURL media="segment_1.m4s" />
+                    <SegmentURL media="segment_2.m4s" />
+                    <!-- More segments can be added here -->
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+        <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2">
+            <Representation id="2" bandwidth="96000" audioSamplingRate="48000">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/babel.mpd</BaseURL>
+                <SegmentList duration="2000000" timescale="1000000">
+                    <SegmentURL media="segment_1.m4a" />
+                    <SegmentURL media="segment_2.m4a" />
+                    <!-- More segments can be added here -->
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+        <ContentProtection>
+            <ProtectionSchemeInfo schemeIdUri="urn:mpeg:dash:mp4protection:2011" 
+                                  value="c153d2d64bd75cca98d98df0aacdf279">
+                <KeySystem>
+                    <SchemeIdUri>urn:uuid:c153d2d6-4bd7-5cca-98d9-8df0aacdf279</SchemeIdUri>
+                    <ContentKey>
+                        <KeyId>165cce4907b78c3f9d9decef997d2132</KeyId>
+                        <Key>FlzOSQe3jD+dnezvmX0hMg</Key>
+                        <Type>temporary</Type>
+                    </ContentKey>
+                </KeySystem>
+            </ProtectionSchemeInfo>
+        </ContentProtection>
+    </Period>
 </MPD>
