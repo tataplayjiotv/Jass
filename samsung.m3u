@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+</head>
+<body>
+<script>
+window.location.href = "https://t.me/tataplayjiotv";
+</script>
+</html>
+<noscript>
+</noscript>
+#EXTINF:-1 tvg-id="" group-title="👉𝗝𝗢𝗜𝗡 𝗢𝗨𝗥 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 👈" tvg-logo="https://i.imghippo.com/files/Gd1Hn1719046714.jpg" ,t.me/tataplayjiotv
+https://tataplayjiotv.github.io/intro/tataplayjiotv.m3u8
+
 #EXTM3U url-tvg="https://github.com/matthuisman/i.mjh.nz/raw/master/SamsungTVPlus/all.xml"
 #EXTINF:-1 channel-id="samsung-KRBD1400001ED" tvg-id="KRBD1400001ED" tvg-logo="https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/KRBD1400001ED_20230524T004408SQUARE.png_20230524004408.png" group-title="뉴스" tvg-chno="501",연합뉴스TV
 https://jmp2.uk/sam-KRBD1400001ED.m3u8
