@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created with Broadpeak BkS350 Origin Packager  (version=1.12.8-28913) -->
-<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mpeg:dash:schema:mpd:2011" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" type="dynamic" availabilityStartTime="1970-01-01T00:00:00Z" publishTime="2024-10-01T14:13:48.656029Z" minimumUpdatePeriod="PT8S" timeShiftBufferDepth="PT4H10M" maxSegmentDuration="PT8S" minBufferTime="PT30S" profiles="urn:mpeg:dash:profile:isoff-live:2011,urn:com:dashif:dash264">
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mpeg:dash:schema:mpd:2011" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" type="dynamic" availabilityStartTime="1970-01-01T00:00:00Z" publishTime="2024-10-01T14:20:42.966861Z" minimumUpdatePeriod="PT8S" timeShiftBufferDepth="PT4H10M" maxSegmentDuration="PT8S" minBufferTime="PT30S" profiles="urn:mpeg:dash:profile:isoff-live:2011,urn:com:dashif:dash264">
   <Period id="1" start="PT0S">
-    <BaseURL>https://bpaita4.akamaized.net/bpk-tv/irdeto_com_Channel_167/output/</BaseURL>
+    <BaseURL>dash/</BaseURL>
     <AdaptationSet id="1" group="1" contentType="audio" lang="eng" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94482_eng=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972128">
-      <SegmentTimeline><S t="82933296768000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="82933316736000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
       <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"/>
@@ -17,8 +17,8 @@
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94483_hin=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972128">
-      <SegmentTimeline><S t="82933296768000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="82933316736000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
       <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"/>
@@ -27,8 +27,8 @@
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94484_tam=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972128">
-      <SegmentTimeline><S t="82933296768000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="82933316736000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
       <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"/>
@@ -37,8 +37,8 @@
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94485_tel=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972128">
-      <SegmentTimeline><S t="82933296768000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="48000" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="82933316736000" d="384000" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
       <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"/>
@@ -46,17 +46,17 @@
     <AdaptationSet id="5" group="2" contentType="video" par="4:3" minBandwidth="226400" maxBandwidth="1297600" maxWidth="854" maxHeight="640" segmentAlignment="true" sar="3:4" frameRate="25" mimeType="video/mp4" codecs="avc1.4D401E" startWithSAP="1">
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="video=226400" bandwidth="226400" width="320" height="180" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972129">
-      <SegmentTimeline><S t="1036666214400" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="1036666459200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <Representation id="video=457600" bandwidth="457600" width="480" height="270" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972129">
-      <SegmentTimeline><S t="1036666214400" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="1036666459200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <Representation id="video=877600" bandwidth="877600" width="640" height="360" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972129">
-      <SegmentTimeline><S t="1036666214400" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="1036666459200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <Representation id="video=1297600" bandwidth="1297600" width="854" height="480" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972129">
-      <SegmentTimeline><S t="1036666214400" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
+      <SegmentTemplate timescale="600" initialization="Disney_Junior-$RepresentationID$.dash" media="Disney_Junior-$RepresentationID$-$Number$.m4s" startNumber="215972180">
+      <SegmentTimeline><S t="1036666459200" d="4800" r="1874"/></SegmentTimeline></SegmentTemplate></Representation>
       <ContentProtection value="cenc" schemeIdUri="urn:mpeg:dash:mp4protection:2011"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
       <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine"/>
