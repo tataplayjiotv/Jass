@@ -1,48 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delayed Link with Warning</title>
-    <style>
-        #warning-message {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🅹🅰🆂🆂 🅼3🆄 - IPTV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(47, 47, 47, 0.9), rgba(0, 0, 0, 0.7));
+      color: #dcdcdc;
+      padding: 0 15px;
+      overflow-x: hidden;
+      scroll-behavior: smooth; /* Enable smooth scrolling */
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      margin-top: 80px;
+      margin-bottom: 60px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #3b3b3b;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      border: 2px solid #4b1a8e;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.05);
+    }
+
+    .header {
+      background-color: #4b1a8e;
+      padding: 10px 0;
+      width: 100%;
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .textbox-container {
+      background-color: #4e2c82;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 650px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .textbox-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(255, 95, 95, 0.5);
+    }
+
+    .textbox-container input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: 2px solid #3e3e54;
+      border-radius: 8px;
+      text-align: center;
+      background-color: #3e3e54;
+      color: #fff;
+      transition: border-color 0.3s;
+    }
+
+    .textbox-container input[type="text"]:focus {
+      border-color: #ff5f5f;
+      outline: none;
+    }
+
+    .textbox-container button {
+      background: #ff5f5f;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .textbox-container button:hover {
+      background: #ff3f3f;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .validity-message {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ff5f5f;
+    }
+
+    /* Firefly animation with smoother motion */
+    .firefly {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fly 6s ease-in-out infinite, flicker 2s infinite alternate, blink 1s infinite step-end;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(-100px, -50px);
+      }
+      50% {
+        transform: translate(100px, -100px);
+      }
+      75% {
+        transform: translate(-150px, 150px);
+      }
+      100% {
+        transform: translate(150px, 200px);
+      }
+    }
+
+    @keyframes flicker {
+      0% {
+        opacity: 0.7;
+      }
+      25% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0.9;
+      }
+      50% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 0.9;
+      }
+    }
+
+    .telegram-button {
+      margin-top: 20px;
+      background-color: #0088cc;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .telegram-button:hover {
+      background-color: #006fa6;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .special-text-container {
+      background: linear-gradient(to right, #ff5f5f, #4b1a8e);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 30px;
+      width: 100%;
+      max-width: 650px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      font-size: 18px;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 1px;
+      line-height: 1.8;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+    }
+
+    .special-text-container span {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .container {
+        margin-top: 60px;
+        margin-bottom: 40px;
+        padding: 20px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      .textbox-container input[type="text"] {
+        font-size: 14px;
+      }
+
+      .textbox-container button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .special-text-container {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 15px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      .textbox-container input[type="text"] {
+        font-size: 12px;
+      }
+
+      .textbox-container button {
+        font-size: 12px;
+        padding: 8px 15px;
+      }
+
+      .special-text-container {
+        font-size: 16px;
+        padding: 15px;
+      }
+
+      .telegram-button {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div id="warning-message">You will be redirected in <span id="countdown">5</span> seconds...</div>
-    <a href="https://www.example.com" id="delayed-link">Click here to go to Example</a>
+  <div class="header">
+    IPTV - Xtream Playlist
+  </div>
 
-    <script>
-        let countdownElement = document.getElementById('countdown');
-        let linkElement = document.getElementById('delayed-link');
-        let countdownTime = 5; // Time in seconds
+  <div class="container">
+    <div class="textbox-container">
+      <h3>🅹🅰🆂🆂 🅼3🆄 - Xtream Playlist</h3>
 
-        // Function to update the countdown timer
-        function updateCountdown() {
-            if (countdownTime > 0) {
-                countdownTime--;
-                countdownElement.textContent = countdownTime;
-            } else {
-                window.location.href = linkElement.href; // Redirect when countdown reaches 0
-            }
-        }
+      <?php if (empty($token)) : ?>
+        <input type="text" value="Activate your playlist" readonly>
+        <button onclick="window.location.href='https://gplinks.co/PjLTm5J'">Activate</button>
+      <?php else : ?>
+        <?php $playlistUrl = "https://$serverAddress/playlist.m3u?token=$token"; ?>
+        <input type="text" id="myInput" value="<?php echo $playlistUrl; ?>" readonly>
+        <button onclick="copyToClipboard()">Copy</button>
+      <?php endif; ?>
 
-        // Start the countdown timer
-        setInterval(updateCountdown, 1000); // Update every second
+      <div class="validity-message" style="color: <?php echo $messageColor; ?>;">
+        <?php echo $tokenValidityMessage; ?>
+      </div>
+    </div>
+  </div>
 
-        // Optionally, you can disable the link initially
-        linkElement.style.pointerEvents = 'none';
-        linkElement.style.color = 'grey';
+  <a href="https://t.me/YourTelegramChannel" class="telegram-button" target="_blank">Join Telegram</a>
 
-        // Enable the link once the countdown is finished
-        linkElement.addEventListener('click', function(event) {
-            if (countdownTime > 0) {
-                event.preventDefault(); // Prevent the default action until countdown is finished
-            }
-        });
-    </script>
+  <div class="special-text-container">
+    <span>👑🌟 🆂🆄🅿🅿🅾🆁🆃🅴🅳 🅰🅻🅻 🅿🅻🅰🆈🅴🆁 🌟👑</span>
+    <span>🆅🅰🅻🅸🅳🅴🆈:-/br5 𝘿𝘼𝙔 𝘼𝘾𝘾𝙀𝙎𝙎 </span>
+    <span> 🅢🅤🅖🅖🅔🅢🅣🅔🅓 🅟🅛🅐🅨🅔🅡</span>
+    <span>🆃🅸🆅🅸🅼🅰🆃🅴</span>
+    <span>🅾🆃🆃 🅽🅰🆅🅸🅶🅰🆃🅴🆁</span>
+    <span>🅽🆂 🅿🅻🅰🆈🅴🆁</span>
+  </div>
+
+  <script>
+    function copyToClipboard() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
+
+    // Create enhanced firefly animation with larger firefly dots
+    function createFireflies() {
+      // Remove old fireflies before creating new ones
+      let existingFireflies = document.querySelectorAll('.firefly');
+      existingFireflies.forEach(firefly => firefly.remove());
+
+      for (let i = 0; i < 20; i++) { // Reduced the number for a cleaner effect
+        let firefly = document.createElement('div');
+        firefly.classList.add('firefly');
+        document.body.appendChild(firefly);
+
+        let randomX = Math.random() * window.innerWidth;
+        let randomY = Math.random() * window.innerHeight;
+        let randomSize = Math.random() * 4 + 4; // Fireflies will have different sizes (4px to 8px)
+        let randomDelay = Math.random() * 5 + 1; // Random animation delay for each firefly
+
+        firefly.style.left = randomX + 'px';
+        firefly.style.top = randomY + 'px';
+        firefly.style.width = randomSize + 'px';
+        firefly.style.height = randomSize + 'px';
+        firefly.style.animationDelay = randomDelay + 's';
+        firefly.style.animationDuration = (Math.random() * 2 + 4) + 's'; // Random duration for movement
+      }
+    }
+
+    // Create fireflies on page load and on window resize
+    createFireflies();
+    window.addEventListener('resize', createFireflies);
+  </script>
 </body>
+
 </html>
